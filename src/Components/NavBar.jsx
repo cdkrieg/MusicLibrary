@@ -31,6 +31,7 @@ const NavBar = () => {
           id="navbarDropdown"
           role="button"
           onSelect={handleSelect}
+          title="selectCategory"
         >
           <Dropdown.Item
             className="dropdown-item"
