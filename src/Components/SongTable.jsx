@@ -1,6 +1,9 @@
+import { Table } from "react-bootstrap";
+import './SongTable.css'
+
 const SongTable = (props) => {
   return (
-    <table className="table">
+    <Table striped bordered hover className="table">
       <thead>
         <tr>
           <th>Title</th>
@@ -23,7 +26,7 @@ const SongTable = (props) => {
           );
         })}
       </tbody>
-    </table>
+    </Table>
   );
 };
 
