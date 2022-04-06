@@ -3,8 +3,16 @@ Form {
   margin-left: auto;
   margin-right: auto;
   color: black;
-  max-width: 20vw;
+  max-width: 30vw;
 }
 button {
   margin-top: 1rem;
+  font-weight: bold;
+}
+.formControl{
+  font-weight: bold;
+  border-width: 2px;
+  max-width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
 }

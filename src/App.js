@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./Components/NavBar";
 import axios from "axios";
-// import SongTable from "./Components/SongTable";
 import SearchBar from "./Components/SearchBar";
 
 function App() {

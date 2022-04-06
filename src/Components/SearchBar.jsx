@@ -41,9 +41,11 @@ const SearchBar = (props) => {
       <Form className="d-flex">
         <Container className="container">
           <Form.Group className="mb-3" controlId="formSearchText">
+          <Form.Label>Press ENTER to filter music based on search</Form.Label>
             <Form.Control
+            className="formControl"
               type="text"
-              placeholder="Enter search"
+              placeholder="Enter search..."
               onKeyPress={(event) => {
                 event.key === "Enter" && enterKey(event);
               }}
