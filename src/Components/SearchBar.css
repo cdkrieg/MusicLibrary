@@ -1,16 +1,10 @@
-Form{
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-    
-    color: black;
-    max-width: 20vw;
-    /* margin-left: 20rem; */
+Form {
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  max-width: 20vw;
 }
-button{
-    margin-top: 1rem;
-}
-.container{
-    max-width: 40vw;
-
+button {
+  margin-top: 1rem;
 }

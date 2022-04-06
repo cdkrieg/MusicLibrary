@@ -8,7 +8,6 @@ import SearchBar from "./Components/SearchBar";
 function App() {
   const [songList, setSongList] = useState();
   let response;
-  
 
   useEffect(() => {
     makeGetRequest();
@@ -16,7 +15,9 @@ function App() {
 
   async function makeGetRequest() {
     try {
-      response =  await axios.get("http://www.devcodecampmusiclibrary.com/api/music");
+      response = await axios.get(
+        "http://www.devcodecampmusiclibrary.com/api/music"
+      );
       setSongList(response.data);
     } catch (error) {
       console.log("Error in API call");
@@ -24,12 +25,9 @@ function App() {
   }
 
   return (
-    
     <div className="App">
       <NavBar />
-      {songList &&
-      <SearchBar  tempSongList ={songList}/>
-      }
+      {songList && <SearchBar tempSongList={songList} />}
     </div>
   );
 }
