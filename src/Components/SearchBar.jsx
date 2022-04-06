@@ -6,8 +6,8 @@ import Button from "@restart/ui/esm/Button";
 
 const SearchBar = (props) => {
   const [songList, setSongList] = useState(props.tempSongList);
-  const arraySearch = (array, keyword) => {
-    const searchTerm = keyword.toLowerCase();
+  const arrayFilter = (array, string) => {
+    const searchTerm = string.toLowerCase();
     return array.filter((value) => {
       return (
         value.title.toLowerCase().match(new RegExp(searchTerm, "g")) ||
@@ -27,8 +27,7 @@ const SearchBar = (props) => {
 
   const enterKey = (event) => {
     event.preventDefault();
-
-    setSongList(arraySearch(songList, event.target.value));
+    setSongList(arrayFilter(songList, event.target.value));
     event.target.value = "";
   };
 
@@ -61,7 +60,7 @@ const SearchBar = (props) => {
           </Form.Group>
         </Container>
       </Form>
-      <br />
+      
       <SongTable tableSongList={songList} />
     </div>
   );
