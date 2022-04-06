@@ -1,7 +1,9 @@
 import { Table } from "react-bootstrap";
-import './SongTable.css'
+import "./SongTable.css";
 
 const SongTable = (props) => {
+  console.log(props.tableSongList);
+
   return (
     <Table striped bordered hover className="table">
       <thead>
@@ -14,14 +16,14 @@ const SongTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.tempSongList.map((songList, index) => {
+        {props.tableSongList.map((tableSongList, index) => {
           return (
             <tr key={index}>
-              <td>{songList.title}</td>
-              <td>{songList.album}</td>
-              <td>{songList.artist}</td>
-              <td>{songList.genre}</td>
-              <td>{songList.releaseDate}</td>
+              <td>{tableSongList.title}</td>
+              <td>{tableSongList.album}</td>
+              <td>{tableSongList.artist}</td>
+              <td>{tableSongList.genre}</td>
+              <td>{tableSongList.releaseDate}</td>
             </tr>
           );
         })}

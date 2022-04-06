@@ -1,6 +1,6 @@
-bi{
-    color: rgb(41, 109, 32);
-}
+
 .navbar{
-    width: 90vw;
+    width: 95vw;
+    font-weight: bold;
+    text-align: right;
 }
