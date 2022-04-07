@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./Components/NavBar";
-import axios from "axios";
+import {
+  getAllSongs,
+  getSongById,
+  addSong,
+  updateSong,
+  deleteSong
+} from "./Components/Axios";
 import SearchBar from "./Components/SearchBar";
 
 function App() {
   const [songList, setSongList] = useState();
-  let response;
 
   useEffect(() => {
-    makeGetRequest();
+    let songs = getAllSongs()
+      .then((songs) => {
+        setSongList(songs)
+      });
+    // setSongList(getAllSongs());
   }, []);
 
-  async function makeGetRequest() {
-    try {
-      response = await axios.get(
-        "http://www.devcodecampmusiclibrary.com/api/music"
-      );
-      setSongList(response.data);
-    } catch (error) {
-      console.log("Error in API call");
-    }
-  }
 
   return (
     <div className="App">

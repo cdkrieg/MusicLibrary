@@ -60,8 +60,8 @@ const SearchBar = (props) => {
           </Form.Group>
         </Container>
       </Form>
-      
-      <SongTable tableSongList={songList} />
+      {/* {songList.length > 0 ?  : null} */}
+      <SongTable  tableSongList={songList}  />
     </div>
   );
 };
