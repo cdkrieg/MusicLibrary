@@ -23,7 +23,7 @@ const SearchBar = (props) => {
     if (songList.length == undefined) {
       setSongList(props.tempSongList);
     }
-  });
+  }, [songList, props.tempSongList]);
 
   const enterKey = (event) => {
     event.preventDefault();
