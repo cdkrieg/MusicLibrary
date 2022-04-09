@@ -19,11 +19,11 @@ const SearchBar = (props) => {
     });
   };
 
-  useEffect(() => {
-    if (songList.length == undefined) {
-      setSongList(props.tempSongList);
-    }
-  }, [songList, props.tempSongList]);
+  // useEffect(() => {
+  //   if (songList.length == undefined) {
+  //     setSongList(props.tempSongList);
+  //   }
+  // }, []);
 
   const enterKey = (event) => {
     event.preventDefault();
@@ -37,10 +37,10 @@ const SearchBar = (props) => {
 
   return (
     <div>
-      <Form className="d-flex">
+      <Form className="d-flex" >
         <Container className="container">
           <Form.Group className="mb-3" controlId="formSearchText">
-          <Form.Label>Press ENTER to filter music based on search</Form.Label>
+          <Form.Label hidden={props.hideTable}>Press ENTER to filter music based on search</Form.Label>
             <Form.Control
             className="formControl"
               type="text"
@@ -48,12 +48,14 @@ const SearchBar = (props) => {
               onKeyPress={(event) => {
                 event.key === "Enter" && enterKey(event);
               }}
+              hidden={props.hideTable}
             />
             <Button
               variant="secondary"
               onClick={() => {
                 handleButton();
               }}
+              hidden={props.hideTable}
             >
               Clear Filter
             </Button>
@@ -61,7 +63,7 @@ const SearchBar = (props) => {
         </Container>
       </Form>
       {/* {songList.length > 0 ?  : null} */}
-      <SongTable  tableSongList={songList}  />
+      <SongTable  tableSongList={songList} hideTable={props.hideTable} />
     </div>
   );
 };

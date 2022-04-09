@@ -7,7 +7,7 @@ const SongTable = (props) => {
   return (
     <Table striped bordered hover className="table">
       <thead>
-        <tr>
+        <tr hidden={props.hideTable}>
           <th>Title</th>
           <th>Album</th>
           <th>Artist</th>
@@ -18,8 +18,8 @@ const SongTable = (props) => {
       <tbody>
         {props.tableSongList.map((tableSongList, index) => {
           return (
-            <tr key={index}>
-              <td>{tableSongList.title}</td>
+            <tr hidden={props.hideTable} key={index}>
+              <td >{tableSongList.title}</td>
               <td>{tableSongList.album}</td>
               <td>{tableSongList.artist}</td>
               <td>{tableSongList.genre}</td>
