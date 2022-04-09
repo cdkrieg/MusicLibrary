@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import SongTable from "./SongTable";
 import "./SearchBar.css";
@@ -19,12 +19,6 @@ const SearchBar = (props) => {
     });
   };
 
-  // useEffect(() => {
-  //   if (songList.length == undefined) {
-  //     setSongList(props.tempSongList);
-  //   }
-  // }, []);
-
   const enterKey = (event) => {
     event.preventDefault();
     setSongList(arrayFilter(songList, event.target.value));
@@ -37,12 +31,14 @@ const SearchBar = (props) => {
 
   return (
     <div>
-      <Form className="d-flex" >
+      <Form className="d-flex">
         <Container className="container">
           <Form.Group className="mb-3" controlId="formSearchText">
-          <Form.Label hidden={props.hideTable}>Press ENTER to filter music based on search</Form.Label>
+            <Form.Label hidden={props.hideTable}>
+              Press ENTER to filter music based on search
+            </Form.Label>
             <Form.Control
-            className="formControl"
+              className="formControl"
               type="text"
               placeholder="Enter search..."
               onKeyPress={(event) => {
@@ -62,8 +58,7 @@ const SearchBar = (props) => {
           </Form.Group>
         </Container>
       </Form>
-      {/* {songList.length > 0 ?  : null} */}
-      <SongTable  tableSongList={songList} hideTable={props.hideTable} />
+      <SongTable tableSongList={songList} hideTable={props.hideTable} />
     </div>
   );
 };

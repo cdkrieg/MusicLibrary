@@ -3,6 +3,7 @@ import { Navbar } from "react-bootstrap";
 import "./SearchBar.jsx";
 import Button from "@restart/ui/esm/Button";
 import DeleteSong from "./DeleteSong";
+import UpdateSong from "./UpdateSong";
 
 
 const NavBar = (props) => {
@@ -23,8 +24,10 @@ const NavBar = (props) => {
         </svg>
         <Button 
         type="button"
+        className="btn btn-success"
         onClick={() => {props.setHideTable(!props.hideTable)}}
         >Add Song</Button>
+        {props.songList.length > 0 && <UpdateSong songList={props.songList}/>}
         <DeleteSong />
       </div>
     </Navbar>

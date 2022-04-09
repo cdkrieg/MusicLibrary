@@ -1,7 +1,5 @@
 import axios from "axios";
 
-
-// const axios = axios.create({baseURL: 'http://localhost:5005/api/music'});
 const baseURL = 'http://localhost:5005/api/music';
 
 async function getAllSongs() {

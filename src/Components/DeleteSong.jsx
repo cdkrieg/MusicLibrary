@@ -10,42 +10,41 @@ const DeleteSong = (props) => {
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
 
-  function onSubmit(data,event) {
+  function onSubmit(data, event) {
     setShow(false);
     event.preventDefault();
-    console.log("delete data is " + data.songToDelete)
     deleteSong(parseInt(data.songToDelete));
     reset();
     try {
-        window.location.reload();
-      } catch (error) {
-        console.error("Error reloading window");
-      }
-    
+      window.location.reload();
+    } catch (error) {
+      console.error("Error reloading window");
+    }
   }
 
   return (
     <div>
-      <button className="btn btn-secondary" onClick={handleShow}>
+      <button className="btn btn-danger" id="button" onClick={handleShow}>
         Delete Song
       </button>
       <Modal show={show} onHide={handleClose} className="modal fade">
-        <Form
-          onSubmit={handleSubmit(onSubmit)}
-        >
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group>
             <Form.Label>Enter "ID" of song to delete</Form.Label>
             <Form.Control
               className={`form-control ${errors.title ? "is-invalid" : ""}`}
-              {...register("songToDelete", {required: true})}
+              {...register("songToDelete", { required: true })}
               type="text"
               name={"songToDelete"}
             />
-            <button type="btn"
-            onClick={()=> {
-                handleSubmit(onSubmit)
-            }}
-            >Delete this song</button>
+            <button
+              type="btn"
+              onClick={() => {
+                handleSubmit(onSubmit);
+              }}
+            >
+              Delete this song
+            </button>
             <button type="button" className="close" onClick={handleClose}>
               Close
             </button>
