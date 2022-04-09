@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <NavBar setHideTable={setHideTable} hideTable={hideTable} />
       {songList.length > 0 && <SearchBar tempSongList={songList} hideTable={hideTable} />}
-      <AddSong setSongList={setSongList} songList={songList} />
+      <AddSong setSongList={setSongList} songList={songList} hideTable={hideTable} />
     </div>
   );
 }
