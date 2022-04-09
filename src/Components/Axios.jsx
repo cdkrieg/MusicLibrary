@@ -45,7 +45,7 @@ async function updateSong(id, obj){
 
 async function deleteSong(id){
     try {
-        let response = await axios.delete(`${baseURL}/${id}`);
+        let response = await axios.delete(`${baseURL}/${id}`,{"content-type":"application/json"});
         return response.data;
     } catch (error) {
         console.error('Error deleting song: ' + error);

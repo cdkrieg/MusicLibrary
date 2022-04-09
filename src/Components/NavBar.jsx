@@ -2,6 +2,7 @@ import "./NavBar.css";
 import { Navbar } from "react-bootstrap";
 import "./SearchBar.jsx";
 import Button from "@restart/ui/esm/Button";
+import DeleteSong from "./DeleteSong";
 
 
 const NavBar = (props) => {
@@ -24,6 +25,7 @@ const NavBar = (props) => {
         type="button"
         onClick={() => {props.setHideTable(!props.hideTable)}}
         >Add Song</Button>
+        <DeleteSong />
       </div>
     </Navbar>
   );
